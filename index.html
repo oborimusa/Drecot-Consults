@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drecot Consults – Hospitality, Tourism & Event Management</title>
+    <!-- Luxury Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================================
+           RESET & BASE
+           ============================================================ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f4f4f9;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; }
+
+        /* ============================================================
+           NAVIGATION
+           ============================================================ */
+        nav {
+            background: #1A1A2E; /* Deep Navy */
+            color: #ffffff;
+            padding: 16px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        nav .logo {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        nav .logo span { color: #D4AF37; /* Gold */ }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #D4AF37;
+            user-select: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: #D4AF37; }
+
+        .nav-cta {
+            background: #D4AF37;
+            color: #1A1A2E !important;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .nav-cta:hover { background: #e6c04c; transform: scale(1.05); }
+
+        @media (max-width: 768px) {
+            .hamburger { display: block; }
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 20px 0;
+                background: #1A1A2E;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                z-index: 999;
+                border-bottom: 2px solid #D4AF37;
+            }
+            .nav-links.active { display: flex; }
+            .nav-links a { width: 100%; text-align: center; padding: 8px 0; }
+            .nav-cta { width: 80%; text-align: center; }
+        }
+
+        /* ============================================================
+           HERO SECTION
+           ============================================================ */
+        .hero {
+            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.95)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 100px 20px 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span { color: #D4AF37; }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 12px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #E94560; /* Ruby Red */
+            color: #ffffff;
+            padding: 16px 36px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-block;
+            transition: 0.2s;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.4);
+        }
+
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(233, 69, 96, 0.5); }
+
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            padding: 16px 36px;
+            border: 2px solid #D4AF37;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-block;
+            transition: 0.2s;
+        }
+
+        .btn-secondary:hover { background: #D4AF37; color: #1A1A2E; }
+
+        /* ============================================================
+           SECTIONS
+           ============================================================ */
+        .container { max-width: 950px; margin: 0 auto; padding: 60px 20px; }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1A1A2E;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+           SERVICE CARDS
+           ============================================================ */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            border: 1px solid #eef2f7;
+            transition: 0.3s;
+        }
+
+        .service-card:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); border-color: #D4AF37; }
+
+        .service-card .icon { font-size: 2.8rem; margin-bottom: 16px; }
+        .service-card h3 { margin-bottom: 8px; font-size: 1.3rem; color: #1A1A2E; }
+        .service-card p { color: #7f8c8d; font-size: 0.95rem; margin-bottom: 16px; }
+
+        /* ============================================================
+           CONTENT CARDS
+           ============================================================ */
+        .content-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            border: 1px solid #eef2f7;
+        }
+
+        .content-card h3 {
+            color: #1A1A2E;
+            font-size: 1.6rem;
+            margin-bottom: 16px;
+        }
+
+        .content-card h3 span { color: #D4AF37; }
+        .content-card p { color: #2c3e50; font-size: 1.05rem; margin-bottom: 16px; line-height: 1.8; }
+
+        /* ============================================================
+           GOVERNMENT RECOGNITION SECTION
+           ============================================================ */
+        .gov-recognition {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+            border: 2px solid #D4AF37;
+        }
+
+        .gov-recognition h3 { color: #1A1A2E; font-size: 1.8rem; margin-bottom: 16px; }
+        .gov-recognition h3 span { color: #D4AF37; }
+
+        .gov-recognition img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            margin: 20px 0;
+        }
+
+        .gov-recognition .caption { color: #7f8c8d; font-size: 0.95rem; margin-top: 12px; font-style: italic; }
+
+        .gov-recognition .badge-container { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
+        .gov-recognition .trust-badge { background: #f8f9fa; padding: 10px 20px; border-radius: 40px; border: 1px solid #eef2f7; font-weight: 600; color: #1A1A2E; }
+
+        /* ============================================================
+           CONTACT / FOOTER
+           ============================================================ */
+        .contact-card { background: #1A1A2E; color: #ffffff; border-radius: 16px; padding: 40px; text-align: center; max-width: 500px; margin: 0 auto; }
+        .contact-card .phone { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #D4AF37; }
+        .contact-card .email { color: #cbd5e1; margin-bottom: 20px; }
+
+        /* ============================================================
+           WHATSAPP FLOATING BUTTON
+           ============================================================ */
+        .wa-float { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: white; padding: 14px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); display: flex; align-items: center; gap: 8px; z-index: 999; }
+        .wa-float:hover { transform: scale(1.05); }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+        <div class="logo">Drecot <span>Consults</span></div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html" class="nav-cta">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <header class="hero">
+        <h1>Building the Future of <span>Nigeria's Hospitality</span></h1>
+        <p class="tagline">Drecot Consults is a premier hospitality support firm dedicated to elevating the tourism industry through staffing, consulting, and large-scale events.</p>
+        <div class="hero-buttons">
+            <a href="https://kwashate.netlify.app" class="btn-primary">🏆 Visit KWASHATE Awards</a>
+            <a href="https://hospitalityrecruit.netlify.app" class="btn-secondary">🏨 Visit Hospitality Recruit</a>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <section class="container">
+
+        <!-- ===== INTRODUCTION ===== -->
+        <div class="content-card">
+            <h3>🏛️ <span>About Drecot Consults</span></h3>
+            <p>Drecot Consults is a hospitality support firm that has taken a great step to develop the hospitality industry in Nigeria, starting from Kwara State and spreading high standards through the organizing of state Hospitality Awards.</p>
+            <p>Our mission is to increase the level of comfort and loyalty of guests, to raise demand for hospitality industry services and related spheres, and to contribute to the economic growth of the nation.</p>
+        </div>
+
+        <!-- ===== SERVICES SECTION ===== -->
+        <div id="services" class="content-card">
+            <h3>💼 <span>Our Core Services</span></h3>
+            <p>We provide comprehensive solutions for the hospitality and tourism industry. Whether you are a hotel seeking staff, a government agency planning a tourism initiative, or a business looking to host a world-class event, we deliver excellence.</p>
+            
+            <div class="grid-3">
+                <div class="service-card">
+                    <div class="icon">🤝</div>
+                    <h3>Hospitality Staffing</h3>
+                    <p>We provide highly trained, professional staff for hotels, restaurants, and event centers. Our rigorous screening process ensures you get the best talent in the industry.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🏆</div>
+                    <h3>Event Management</h3>
+                    <p>From private galas to large-scale state expos like KWASHATE, we manage every aspect of event planning, logistics, and execution to ensure a flawless experience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📈</div>
+                    <h3>Tourism Consulting</h3>
+                    <p>We work with state governments and private organizations to develop tourism strategies that attract visitors, boost the local economy, and showcase the best of Nigeria.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🎓</div>
+                    <h3>Corporate Training</h3>
+                    <p>We offer certification programs in Customer Service, Leadership, Front-of-House Management, and Banquet Operations to upskill your workforce.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📋</div>
+                    <h3>Project Management</h3>
+                    <p>We oversee complex hospitality and tourism projects from conception to completion, ensuring timelines, budgets, and quality standards are met.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">🤝</div>
+                    <h3>Strategic Partnerships</h3>
+                    <p>We form long-term partnerships with hotels, airlines, and tourism boards to create sustainable growth and industry-wide recognition.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== OUR BRANDS ===== -->
+        <div class="content-card">
+            <h3>🏢 <span>Our Brands</span></h3>
+            <p>Drecot Consults operates through two specialized divisions designed to serve the hospitality industry at every level.</p>
+            
+            <div class="grid-3" style="grid-template-columns: 1fr 1fr;">
+                <div class="service-card" style="border: 2px solid #D4AF37;">
+                    <div class="icon">🏆</div>
+                    <h3>KWASHATE</h3>
+                    <p>The Kwara State Hospitality and Tourism Expo is the premier awards ceremony recognizing excellence in hotels, restaurants, transport, and tourism services.</p>
+                    <a href="https://kwashate.netlify.app" style="color: #1A1A2E; font-weight: 600; display: inline-block; margin-top: 10px;">Visit KWASHATE →</a>
+                </div>
+                <div class="service-card" style="border: 2px solid #D4AF37;">
+                    <div class="icon">🏨</div>
+                    <h3>Hospitality Recruit</h3>
+                    <p>Our dedicated staffing division providing highly trained professional staff for hotels, restaurants, and event centers across Nigeria.</p>
+                    <a href="https://hospitalityrecruit.netlify.app" style="color: #1A1A2E; font-weight: 600; display: inline-block; margin-top: 10px;">Visit Hospitality Recruit →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== GOVERNMENT RECOGNITION ===== -->
+        <div class="gov-recognition">
+            <h3>🏛️ <span>Government Recognized Excellence</span></h3>
+            
+            <!-- Replace src with your actual Postimages link -->
+            <img 
+                src="https://static.wixstatic.com/media/4fdb46_6190714e4211431e86f96e7a7e6b8a4d~mv2.jpeg/v1/fill/w_988,h_724,al_c,q_85,usm_4.00_1.00_0.00,enc_avif,quality_auto/4fdb46_6190714e4211431e86f96e7a7e6b8a4d~mv2.jpeg" 
+                alt="Drecot Consults with the Deputy Governor of Kwara State"
+            >
+            
+            <p class="caption">Drecot Consults has operated at the highest levels of government. This photo captures our delegation alongside the Deputy Governor of Kwara State and the National Orientation Agency (NOA) during the approval of the KWASHATE project.</p>
+            
+            <div class="badge-container">
+                <span class="trust-badge">✅ Endorsed by the Director of Hotels, Kwara State</span>
+                <span class="trust-badge">🏛️ Approved by the National Orientation Agency (NOA)</span>
+                <span class="trust-badge">🏆 Proven Track Record in Hospitality</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contact" class="container" style="padding-top:0;">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a project in mind? Let's discuss how Drecot Consults can help.</p>
+        <div class="contact-card">
+            <div class="phone">📞 08039661354</div>
+            <div class="email">oborimusa@gmail.com</div>
+            <a href="https://wa.me/2348039661354" class="btn-primary" style="display:inline-block;">📱 Chat on WhatsApp</a>
+        </div>
+    </section>
+
+    <a href="https://wa.me/2348039661354?text=Hello%20Drecot%20Consults!%20I%20need%20more%20information." class="wa-float">💬 Chat with us</a>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById("navLinks");
+            menu.classList.toggle("active");
+        }
+    </script>
+</body>
+</html>
