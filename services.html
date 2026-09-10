@@ -3,37 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services – Drecot Consults</title>
+    <title>Services – Drecot Consults | Parent Company of Kwashate & HospitalityRecruit</title>
     <!-- Luxury Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* ============================================================
            RESET & BASE
            ============================================================ */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Inter', sans-serif;
-            background: #f4f4f9;
-            color: #2c3e50;
+            background: #f8f7f4;
+            color: #1a1a2e;
             line-height: 1.6;
         }
 
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        a { text-decoration: none; }
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        a {
+            text-decoration: none;
+        }
 
         /* ============================================================
            NAVIGATION
            ============================================================ */
         nav {
-            background: #1A1A2E; /* Deep Navy */
+            background: #1A1A2E;
             color: #ffffff;
             padding: 16px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             position: relative;
         }
 
@@ -42,8 +53,27 @@
             font-weight: 700;
             letter-spacing: 1px;
         }
+         .logo-img {
+            width: 150px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        } 
 
-        nav .logo span { color: #D4AF37; /* Gold */ }
+        nav .logo span {
+            color: #D4AF37;
+        }
+
+        .logo-sub {
+            font-size: 0.65rem;
+            color: #aab0b8;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            display: block;
+            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            margin-top: -2px;
+        }
 
         .hamburger {
             display: none;
@@ -66,7 +96,13 @@
             transition: color 0.2s;
         }
 
-        .nav-links a:hover { color: #D4AF37; }
+        .nav-links a:hover {
+            color: #D4AF37;
+        }
+
+        .nav-links a.active {
+            color: #D4AF37;
+        }
 
         .nav-cta {
             background: #D4AF37;
@@ -77,10 +113,15 @@
             transition: 0.2s;
         }
 
-        .nav-cta:hover { background: #e6c04c; transform: scale(1.05); }
+        .nav-cta:hover {
+            background: #e6c04c;
+            transform: scale(1.05);
+        }
 
         @media (max-width: 768px) {
-            .hamburger { display: block; }
+            .hamburger {
+                display: block;
+            }
             .nav-links {
                 display: none;
                 width: 100%;
@@ -95,50 +136,83 @@
                 z-index: 999;
                 border-bottom: 2px solid #D4AF37;
             }
-            .nav-links.active { display: flex; }
-            .nav-links a { width: 100%; text-align: center; padding: 8px 0; }
-            .nav-cta { width: 80%; text-align: center; }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 8px 0;
+            }
+            .nav-cta {
+                width: 80%;
+                text-align: center;
+            }
         }
 
         /* ============================================================
            HERO HEADER
            ============================================================ */
         .page-header {
-            background: linear-gradient(rgba(26, 26, 46, 0.85), rgba(26, 26, 46, 0.95)), 
-                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80');
+            background: linear-gradient(rgba(26, 26, 46, 0.88), rgba(26, 26, 46, 0.95)),
+                url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80');
             background-size: cover;
             background-position: center;
             color: #ffffff;
-            padding: 80px 20px 60px;
+            padding: 100px 20px 60px;
             text-align: center;
         }
 
         .page-header h1 {
             font-size: 3rem;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
-        .page-header h1 span { color: #D4AF37; }
+        .page-header h1 span {
+            color: #D4AF37;
+        }
 
         .page-header .tagline {
             font-size: 1.1rem;
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .page-header .tagline strong {
+            color: #D4AF37;
+        }
+
+        @media (max-width: 700px) {
+            .page-header h1 {
+                font-size: 2.2rem;
+            }
+            .page-header .tagline {
+                font-size: 1rem;
+            }
         }
 
         /* ============================================================
            CONTAINER
            ============================================================ */
-        .container { max-width: 950px; margin: 0 auto; padding: 60px 20px; }
-        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2.4rem;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             color: #1A1A2E;
+        }
+
+        .section-title span {
+            color: #D4AF37;
         }
 
         .section-subtitle {
@@ -155,7 +229,7 @@
             background: #ffffff;
             border-radius: 16px;
             padding: 40px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             margin-bottom: 30px;
             border: 1px solid #eef2f7;
         }
@@ -166,8 +240,21 @@
             margin-bottom: 16px;
         }
 
-        .content-card h3 span { color: #D4AF37; }
-        .content-card p { color: #2c3e50; font-size: 1.05rem; margin-bottom: 16px; line-height: 1.8; }
+        .content-card h3 span {
+            color: #D4AF37;
+        }
+
+        .content-card p {
+            color: #2c3e50;
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .content-card .highlight {
+            color: #D4AF37;
+            font-weight: 700;
+        }
 
         /* ============================================================
            SERVICE CARDS
@@ -181,8 +268,8 @@
         .service-card {
             background: #ffffff;
             border-radius: 16px;
-            padding: 30px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            padding: 30px 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             text-align: center;
             border: 1px solid #eef2f7;
             transition: 0.3s;
@@ -190,7 +277,7 @@
 
         .service-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
             border-color: #D4AF37;
             background: #fafafa;
         }
@@ -205,13 +292,15 @@
             margin-bottom: 8px;
             font-size: 1.3rem;
             color: #1A1A2E;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
         }
 
         .service-card p {
             color: #7f8c8d;
             font-size: 0.95rem;
-            margin-bottom: 16px;
-            line-height: 1.6;
+            line-height: 1.7;
+            margin-bottom: 12px;
         }
 
         .service-card .highlight {
@@ -219,24 +308,196 @@
             font-weight: 700;
         }
 
+        .service-card .positions {
+            font-size: 0.85rem;
+            color: #7f8c8d;
+            margin-top: 10px;
+        }
+
+        /* ============================================================
+           SUBSIDIARY CARDS
+           ============================================================ */
+        .subsidiary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .subsidiary-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 36px 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            border: 2px solid #D4AF37;
+            transition: 0.3s;
+        }
+
+        .subsidiary-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .subsidiary-card .icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .subsidiary-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1A1A2E;
+            margin-bottom: 8px;
+        }
+
+        .subsidiary-card p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .subsidiary-card .btn-link {
+            color: #D4AF37;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            display: inline-block;
+        }
+
+        .subsidiary-card .btn-link:hover {
+            color: #b8942e;
+            transform: translateX(4px);
+        }
+
+        @media (max-width: 768px) {
+            .subsidiary-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================================
+           CTA CARD
+           ============================================================ */
+        .cta-card {
+            background: #1A1A2E;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid #D4AF37;
+            color: #ffffff;
+        }
+
+        .cta-card h3 {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .cta-card p {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.8;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: #D4AF37;
+            color: #1A1A2E;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #e6c04c;
+            transform: scale(1.05);
+        }
+
         /* ============================================================
            CONTACT / FOOTER
            ============================================================ */
-        .contact-card { background: #1A1A2E; color: #ffffff; border-radius: 16px; padding: 40px; text-align: center; max-width: 500px; margin: 0 auto; }
-        .contact-card .phone { font-size: 1.5rem; font-weight: 700; margin-bottom: 12px; color: #D4AF37; }
-        .contact-card .email { color: #cbd5e1; margin-bottom: 20px; }
+        .contact-card {
+            background: #1A1A2E;
+            color: #ffffff;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-card .phone {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #D4AF37;
+        }
+
+        .contact-card .email {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+        }
+
+        .contact-card .btn-primary {
+            display: inline-block;
+        }
 
         /* ============================================================
            WHATSAPP FLOATING BUTTON
            ============================================================ */
-        .wa-float { position: fixed; bottom: 24px; right: 24px; background: #25D366; color: white; padding: 14px 20px; border-radius: 50px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); display: flex; align-items: center; gap: 8px; z-index: 999; }
-        .wa-float:hover { transform: scale(1.05); }
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #25D366;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 999;
+            font-size: 0.95rem;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.05);
+        }
 
         /* ============================================================
            RESPONSIVE
            ============================================================ */
         @media (max-width: 700px) {
-            .page-header h1 { font-size: 2.2rem; }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .content-card {
+                padding: 24px 18px;
+            }
+            .content-card h3 {
+                font-size: 1.3rem;
+            }
+            .cta-card {
+                padding: 24px 18px;
+            }
+            .cta-card h3 {
+                font-size: 1.4rem;
+            }
+            .cta-card p {
+                font-size: 1rem;
+            }
+            .wa-float {
+                padding: 12px 16px;
+                font-size: 0.85rem;
+            }
         }
     </style>
 </head>
@@ -244,20 +505,33 @@
 
     <!-- ===== NAVIGATION ===== -->
     <nav>
-        <div class="logo">Drecot <span>Consults</span></div>
+        <div class="logo">
+            <a href="index.html" class="logo-link">
+                <!-- LOGO IMAGE -->
+                <img src="image/drecot-logo.png" alt="Drecot Consults Logo" class="logo-img">
+                
+                <!-- TEXT BESIDE IT -->
+                <!-- <div class="logo-text">
+                    /* <span class="brand-name">Drecot <span class="gold">Consults</span></span>
+                    <span class="logo-sub">Parent Company</span> */
+                </div> -->
+            </a>
+        </div>
         <div class="hamburger" onclick="toggleMenu()">☰</div>
         <div class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
+            <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
-            <a href="#contact" class="nav-cta">Contact Us</a>
+            <a href="contac.html" class="nav-cta">Contact Us</a>
         </div>
     </nav>
-
     <!-- ===== HERO HEADER ===== -->
     <header class="page-header">
         <h1>Our <span>Services</span></h1>
-        <p class="tagline">Comprehensive hospitality solutions for hotels, businesses, and governments across Nigeria.</p>
+        <p class="tagline">
+            Comprehensive hospitality solutions delivered through our subsidiaries –
+            <strong>Kwashate</strong> and <strong>HospitalityRecruit</strong>.
+        </p>
     </header>
 
     <!-- ===== MAIN CONTENT ===== -->
@@ -266,118 +540,141 @@
         <!-- ===== INTRODUCTION ===== -->
         <div class="content-card">
             <h3>💼 <span>What We Do</span></h3>
-            <p>Drecot Consults offers a full spectrum of services designed to elevate the hospitality and tourism industry in Nigeria. Whether you are a hotel seeking professional staff, a government agency developing a tourism initiative, or an event planner looking for world-class execution, we deliver excellence.</p>
-            <p>Every service is backed by our commitment to <span class="highlight">integrity, professionalism, and measurable results</span>.</p>
+            <p>
+                Drecot Consults offers a full spectrum of services designed to elevate the hospitality
+                and tourism industry in Nigeria. Whether you are a hotel seeking professional staff,
+                a government agency developing a tourism initiative, or an event planner looking for
+                world-class execution, we deliver excellence through our two dynamic subsidiaries.
+            </p>
+            <p>
+                Every service is backed by our commitment to <span class="highlight">integrity,
+                professionalism, and measurable results</span>.
+            </p>
         </div>
 
         <!-- ===== SERVICE CARDS ===== -->
         <div class="grid-3">
-            
+
             <div class="service-card">
                 <span class="icon">🤝</span>
                 <h3>Hospitality Staffing</h3>
                 <p>We provide highly trained, professional staff for hotels, restaurants, and event centers. Our rigorous screening process ensures you get the best talent in the industry.</p>
-                <p style="font-size: 0.85rem; color: #7f8c8d; margin-top: 10px;">
+                <div class="positions">
                     <span class="highlight">Positions:</span> Servers, Bartenders, Chefs, Housekeepers, Front Desk, Banquet Staff.
-                </p>
+                </div>
             </div>
 
             <div class="service-card">
                 <span class="icon">🏆</span>
                 <h3>Event Management</h3>
-                <p>From private galas to large-scale state expos like KWASHATE, we manage every aspect of event planning, logistics, and execution to ensure a flawless experience.</p>
-                <p style="font-size: 0.85rem; color: #7f8c8d; margin-top: 10px;">
+                <p>From private galas to large-scale state expos like Kwashate, we manage every aspect of event planning, logistics, and execution to ensure a flawless experience.</p>
+                <div class="positions">
                     <span class="highlight">Services:</span> Venue sourcing, Catering, Audio-Visual, Decor, Guest management.
-                </p>
+                </div>
             </div>
 
             <div class="service-card">
                 <span class="icon">📈</span>
                 <h3>Tourism Consulting</h3>
                 <p>We work with state governments and private organizations to develop tourism strategies that attract visitors, boost the local economy, and showcase the best of Nigeria.</p>
-                <p style="font-size: 0.85rem; color: #7f8c8d; margin-top: 10px;">
+                <div class="positions">
                     <span class="highlight">Focus:</span> Destination marketing, Eco-tourism, Cultural heritage, Hospitality infrastructure.
-                </p>
+                </div>
             </div>
 
             <div class="service-card">
                 <span class="icon">🎓</span>
                 <h3>Corporate Training</h3>
                 <p>We offer certification programs in Customer Service, Leadership, Front-of-House Management, and Banquet Operations to upskill your workforce.</p>
-                <p style="font-size: 0.85rem; color: #7f8c8d; margin-top: 10px;">
+                <div class="positions">
                     <span class="highlight">Certifications:</span> Front-of-House, Back-of-House, Etiquette, Leadership.
-                </p>
+                </div>
             </div>
 
             <div class="service-card">
                 <span class="icon">📋</span>
                 <h3>Project Management</h3>
                 <p>We oversee complex hospitality and tourism projects from conception to completion, ensuring timelines, budgets, and quality standards are met.</p>
-                <p style="font-size: 0.85rem; color: #7f8c8d; margin-top: 10px;">
+                <div class="positions">
                     <span class="highlight">Expertise:</span> Hotel development, Resort planning, Tourism infrastructure.
-                </p>
+                </div>
             </div>
 
             <div class="service-card">
                 <span class="icon">🤝</span>
                 <h3>Strategic Partnerships</h3>
                 <p>We form long-term partnerships with hotels, airlines, and tourism boards to create sustainable growth and industry-wide recognition.</p>
-                <p style="font-size: 0.85rem; color: #7f8c8d; margin-top: 10px;">
+                <div class="positions">
                     <span class="highlight">Collaborators:</span> Hotel Owners Associations, Tourism Boards, Government Agencies.
-                </p>
+                </div>
             </div>
 
         </div>
 
-        <!-- ===== OUR BRANDS ===== -->
+        <!-- ===== OUR SUBSIDIARIES ===== -->
         <div class="content-card">
-            <h3>🏢 <span>Our Divisions</span></h3>
+            <h3>🏢 <span>Our Subsidiaries</span></h3>
             <p>Drecot Consults operates through two specialized divisions designed to serve the hospitality industry at every level.</p>
-            
-            <div class="grid-3" style="grid-template-columns: 1fr 1fr;">
-                <div class="service-card" style="border: 2px solid #D4AF37;">
-                    <div class="icon">🏆</div>
-                    <h3>KWASHATE</h3>
-                    <p>The Kwara State Hospitality and Tourism Expo is the premier awards ceremony recognizing excellence in hotels, restaurants, transport, and tourism services.</p>
-                    <a href="https://kwashate.netlify.app" style="color: #1A1A2E; font-weight: 600; display: inline-block; margin-top: 10px;">Visit KWASHATE →</a>
+
+            <div class="subsidiary-grid">
+                <div class="subsidiary-card">
+                    <span class="icon">🏆</span>
+                    <h3>Kwashate</h3>
+                    <p>
+                        The Kwara State Hospitality and Tourism Expo is the premier awards ceremony
+                        recognizing excellence in hotels, restaurants, transport, and tourism services
+                        across Nigeria.
+                    </p>
+                    <a href="https://kwashate.netlify.app" class="btn-link">Visit Kwashate →</a>
                 </div>
-                <div class="service-card" style="border: 2px solid #D4AF37;">
-                    <div class="icon">🏨</div>
-                    <h3>Hospitality Recruit</h3>
-                    <p>Our dedicated staffing division providing highly trained professional staff for hotels, restaurants, and event centers across Nigeria.</p>
-                    <a href="https://hospitalityrecruit.netlify.app" style="color: #1A1A2E; font-weight: 600; display: inline-block; margin-top: 10px;">Visit Hospitality Recruit →</a>
+                <div class="subsidiary-card">
+                    <span class="icon">🏨</span>
+                    <h3>HospitalityRecruit</h3>
+                    <p>
+                        Our dedicated recruitment division providing highly trained professional
+                        staff for hotels, restaurants, and event centers across Nigeria and beyond.
+                    </p>
+                    <a href="https://hospitalityrecruit.netlify.app" class="btn-link">Visit HospitalityRecruit →</a>
                 </div>
             </div>
         </div>
 
         <!-- ===== CTA SECTION ===== -->
-        <div class="content-card" style="text-align: center; background: #1A1A2E; color: #ffffff; border: 2px solid #D4AF37;">
-            <h3 style="color: #D4AF37; border-bottom: none;">Ready to Elevate Your Hospitality Business?</h3>
-            <p style="color: #e2e8f0; font-size: 1.1rem; max-width: 600px; margin: 0 auto 20px;">
-                Whether you need staff, training, or a world-class event, Drecot Consults is ready to deliver. Contact us today for a free consultation.
+        <div class="cta-card">
+            <h3>Ready to Elevate Your Hospitality Business?</h3>
+            <p>
+                Whether you need staff, training, or a world-class event, Drecot Consults is ready
+                to deliver. Contact us today for a free consultation.
             </p>
-            <a href="https://wa.me/2348039661354" class="btn-primary" style="display:inline-block;">📱 Book a Free Consultation</a>
+            <a href="https://wa.me/2348039661354?text=Hello%20Drecot%20Consults!%20I%20want%20a%20consultation." class="btn-primary">
+                📱 Book a Free Consultation
+            </a>
         </div>
     </section>
 
     <!-- ===== CONTACT SECTION ===== -->
     <section id="contact" class="container" style="padding-top:0;">
-        <h2 class="section-title">Get In Touch</h2>
+        <h2 class="section-title">Get In <span>Touch</span></h2>
         <p class="section-subtitle">Have a project in mind? Let's discuss how Drecot Consults can help.</p>
         <div class="contact-card">
             <div class="phone">📞 08039661354</div>
             <div class="email">oborimusa@gmail.com</div>
-            <a href="https://wa.me/2348039661354" class="btn-primary" style="display:inline-block;">📱 Chat on WhatsApp</a>
+            <a href="https://wa.me/2348039661354?text=Hello%20Drecot%20Consults!%20I%20need%20more%20information." class="btn-primary">📱 Chat on WhatsApp</a>
         </div>
     </section>
 
-    <a href="https://wa.me/2348039661354?text=Hello%20Drecot%20Consults!%20I%20need%20more%20information." class="wa-float">💬 Chat with us</a>
+    <!-- ===== WHATSAPP FLOATING BUTTON ===== -->
+    <a href="https://wa.me/2348039661354?text=Hello%20Drecot%20Consults!%20I%20need%20more%20information." class="wa-float">
+        💬 Chat with us
+    </a>
 
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
         function toggleMenu() {
             var menu = document.getElementById("navLinks");
             menu.classList.toggle("active");
         }
     </script>
+
 </body>
 </html>
